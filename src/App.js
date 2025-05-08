@@ -11,12 +11,12 @@ function App() {
   }, []);
 
   const fetchTasks = async () => {
-    const response = await axios.get('http://localhost:3001/api/tasks');
+    const response = await axios.get('http://node-svc.demo-project.svc.cluster.local:3001/api/tasks');
     setTasks(response.data);
   };
 
   const addTask = async () => {
-    await axios.post('http://localhost:3001/api/tasks', { title });
+    await axios.post('http://node-svc.demo-project.svc.cluster.local:3001/api/tasks', { title });
     setTitle('');
     fetchTasks();
   };
